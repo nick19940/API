@@ -30,14 +30,7 @@ while On:
 	current.append(x1)
 	highs.append(h)
 	lows.append(l)
-		
-	for h in highs:
-		highs__.append(h)
-		u_highs=np.mean(highs__)
-	for l in lows:
-		lows__.append(l)
-		u_lows=np.mean(lows__)
-			
+				
 	plt.cla()
 	plt.plot(highs)
 	plt.plot(lows)
