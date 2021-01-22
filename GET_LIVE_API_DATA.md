@@ -1,7 +1,5 @@
 # LIVE_API_DATA
 
-# OVERLAY DESIRED TRADING STRATEGIES, CODING THEM INTO LOOP
-
 import MMXXIKEYS
 import numpy as np
 from time import sleep
@@ -10,16 +8,16 @@ from binance.client import Client
 import pandas as pd
 import statistics
 
-# INSERT API KEYS
+#INSERT API KEYS
 client = Client(FILE_NAME.PRIVATE_KEYNAME,FILE_NAME.SECRET_KEYNAME) 
 
-# INSERT PAIR
+#INSERT PAIR
 symbol= 'AB'
 
-# CAN EDIT INTERVAL AND DATA START TIME
+#CAN EDIT INTERVAL AND DATA START TIME
 BTC = client.get_historical_klines(symbol=symbol, interval='1m', start_str="24 hour ago UTC")
 
-# CREATE ARRAYS TO API DATA 
+#CREATE ARRAYS TO API DATA 
 current = []
 last = []
 highs = []
@@ -29,10 +27,10 @@ lows__ = []
 uhighs = []
 ulows = []
 
-# CREATE NEW PLOT
+#CREATE NEW PLOT
 fig, ax = plt.subplots()
 
-# LOOP THAT GETS DATA POINTS x1, x2, h, l and appends TO PREVIOUSLY CREATED ARRAYS FOR PLOT
+#LOOP THAT GETS DATA POINTS x1, x2, h, l and appends TO PREVIOUSLY CREATED ARRAYS FOR PLOT
 On = True
 while On:
 		BTC = client.get_historical_klines(symbol=symbol, interval='1m', start_str="1 hour ago UTC")
