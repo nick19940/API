@@ -7,33 +7,21 @@
 	import statistics
 
 	client = Client(FILE_NAME.PRIVATE_KEYNAME,FILE_NAME.SECRET_KEYNAME)
-
 	symbol= 'AB'
-
 	BTC = client.get_historical_klines(symbol=symbol, interval='1m', start_str="24 hour ago UTC")
-
 	current = []
-
 	last = []
-
 	highs = []
-
 	lows = []
-
 	highs__ = []
-
 	lows__ = []
-
 	uhighs = []
-
 	ulows = []
-
+	
 	fig, ax = plt.subplots()
 
 	On = True
-
 	while On:
-
 		BTC = client.get_historical_klines(symbol=symbol, interval='1m', start_str="1 hour ago UTC")
 		x1 = float(BTC[-1][4])
 		x2 = float(BTC[-2][4])
@@ -42,16 +30,16 @@
 		current.append(x1)
 		highs.append(h)
 		lows.append(l)
+		
 		for h in highs:
 			highs__.append(h)
 			u_highs=np.mean(highs__)
 		for l in lows:
 			lows__.append(l)
 			u_lows=np.mean(lows__)
+			
 		plt.cla()
-		# plt.plot(u_lows)
-		# plt.plot(u_highs)
-		# plt.plot(current)
+		
 		plt.plot(highs)
 		plt.plot(lows)
 		plt.pause(0.01)
